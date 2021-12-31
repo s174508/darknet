@@ -17,3 +17,5 @@ code
 ```
 
 inline `code`
+
+Weights files are too big for GitHub. Here's the [initial weights](https://pjreddie.com/media/files/darknet53.conv.74) we used. They need to be placed in the main directory of darknet. (Perhaps we should upload the weights ourselves along with our "final" weights)
