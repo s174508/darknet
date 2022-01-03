@@ -1,5 +1,6 @@
 # YOLO SWAgroup Yolo v3 for motorcycle detection and model training.
- 
+## Short 
+This repository is forked from the [original darknet repository]([Alexey's repository](https://github.com/AlexeyAB), and changed to fit our problem, thus parts of this code is our own, which we will state below.
 
 ## Model an Training
 This is our source code for building, training and applying a YOLOv3 model on the DTU HPC cluster. Weights files are too big to upload on GitHub, so here's a link to the [initial weights](https://pjreddie.com/media/files/darknet53.conv.74) we used for training the models. They need to be placed in the main directory of darknet.
@@ -15,10 +16,36 @@ We've created a [Colab notebook](https://colab.research.google.com/drive/1ULT6Tu
 ## Examples
 Annotation examples for the different classes can be found in these Imgur albums: [singleclass](https://imgur.com/a/SrPj2mf), [multiclass](https://imgur.com/a/YZeurLa) and [fullclass](https://imgur.com/a/hpFyVRu).
 
+## Which files did we change
+ - [Makefile](Makefile.md)
+ - [job script](jobScript.sh)
+ - [file for convolutional layer](src/convolutional_layer.c)
+     - The file originally declares some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
+ - [file for softmax layer](src/softmax_layer.c)
+     - The file originally declares some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
 
-
+## Which files are our own ? 
+- configurations files for the three classe in the [cfg](cfg) folder
+     1. [yolov3-singleclass.cfg](cfg/yolov3-singleclass.cfg)
+     2. [yolov3-multiclass.cfg](cfg/yolov3-multiclass.cfg)
+     3. [yolov3-fullclass.cfg](cfg/yolov3-fullclass.cfg)
+-  .data files for the three classes in the data folder
+     1. [singleclass.data](data/singleclass.data)
+     2. [multiclass.data](data/multiclass.data)
+     3. [fullclass.data](data/fullclass.data)
+-  .names files for the three classes in the data folder
+     1. [singleclass.names](data/singleclass.names)
+     2. [multiclass.names](data/multiclass.names)
+     3. [fullclass.names](data/fullclass.names)
+- The train, test and validation files containing pathes to all image pathes that are used during training 
+     1. [train.txt](data/train.txt)
+     2. [test.txt](data/test.txt)
+     3. [validation.txt](data/validation.txt)
+- all files in the three result directories in the [result](result) folder
+     1. [singleclass](result/singleclass)
+     2. [multiclass](result/multiclass)
+     3. [fullclass](result/fullclass)
 Template stuff (remove whenever):
-
 - bullet point
   - sub bullet
 
