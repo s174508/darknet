@@ -1,13 +1,22 @@
 # YOLO SWAgroup Yolo v3 for motorcycle detection and model training.
 ## Short 
-This repository is forked from the [original darknet repository]([Alexey's repository](https://github.com/AlexeyAB), and changed to fit our problem, thus parts of this code is our own, which we will state below.
+This repository is forked from the [original darknet repository]([AlexeyAB's repository](https://github.com/AlexeyAB), and changed to fit our problem, thus parts of this code is our own, which we will state below.
 
 ## Model and Training
-This is our source code for building, training and applying a YOLOv3 model on the DTU HPC cluster. Weights files are too big to upload on GitHub, so here's a link to the [initial weights](https://pjreddie.com/media/files/darknet53.conv.74) we used for training the models. They need to be placed in the main directory of darknet.
+This is our source code for building, training and applying a YOLOv3 model on the DTU HPC cluster. Weights files are too big to upload on GitHub, so here's a link to the [initial weights](https://pjreddie.com/media/files/darknet53.conv.74) we used for training the models. They need to be placed in the main directory of darknet. Additionally, here are some of the weights we got from training (these are all the weights that we have used for the report):
+
+[sc10000.weights](https://drive.google.com/uc?export=download&id=1wklpTEy81ja4hc_gFpvkgINI5EuhPPox), [sc40000.weights](https://drive.google.com/uc?export=download&id=1OBPpCRM0RzoqZFP8lqgAWIMAaMwk6Rs_), [sc80000.weights](https://drive.google.com/uc?export=download&id=1thk8p4XQoPwGu-PKtYGWQmW_-_M1fn_1)
+
+
+[mc10000.weights](https://drive.google.com/uc?export=download&id=1-0REP3Qc_K-AcEMLzerSZEQQPwwYWPpa), [mc40000.weights](https://drive.google.com/uc?export=download&id=1z2wtcS7tl7OLQMpnLqm06m8NJf1uHzrk), [mc80000.weights](https://drive.google.com/uc?export=download&id=10h9jMU-SZdvDmHjsXq_pDoBL4BRr6sGn)
+
+
+[fc10000.weights](https://drive.google.com/uc?export=download&id=1JyOqdfigz80wRVwtcTAM3Lzcg_9yUjxg), [fc40000.weights](https://drive.google.com/uc?export=download&id=1WCIATMEOWh1Csa7NwmDX1IJkKfQnQ4qI), [fc80000.weights](https://drive.google.com/uc?export=download&id=1Ow0rRmd0mAqgvlr55GTkijUl9pGKSiVR)
+
 See [Alexey's repository](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects) for in-depth info and guides on how to use the framework.
 
 ## Results 
-The ouput files can be found in the reult folder, these are the log files we saved during training.   
+The ouput files can be found in the result folder, these are the log files we saved during training.   
 To show how we used these files to create our plots in the report we created a [colab notebook](https://colab.research.google.com/drive/1KukcY0026BplZ4Mo4YG2Bz6EKsHtjZHN?usp=sharing). The corresponding jupyter notebook file can be found [here](YOLOSWAg_results.ipynb) under the name `YOLOSWAg_results.ipynb`.
 
 ## Detection
@@ -18,10 +27,8 @@ Annotation examples for the different classes can be found in these Imgur albums
 
 ## Which files did we change
  - [Makefile.md](Makefile.md)
- - [convolutional_layer.c](src/convolutional_layer.c)
-     - The file originally declares some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
- - [softmax_layer.c](src/softmax_layer.c)
-     - The file originally declares some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
+ - [convolutional_layer.c](src/convolutional_layer.c) and [softmax_layer.c](src/softmax_layer.c)
+     - The files originally declare some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
 
 ## Which files are our own ? 
 - [jobScript.sh](jobScript.sh)
@@ -47,19 +54,3 @@ Annotation examples for the different classes can be found in these Imgur albums
      1. singleclass
      2. multiclass
      3. fullclass
-Template stuff (remove whenever):
-- bullet point
-  - sub bullet
-
-![Darknet Logo](http://pjreddie.com/media/files/darknet-black-small.png)
-
-| Network Size               | Darknet, FPS (avg) | tkDNN TensorRT FP32, FPS | tkDNN TensorRT FP16, FPS | OpenCV FP16, FPS | tkDNN TensorRT FP16 batch=4, FPS | OpenCV FP16 batch=4, FPS | tkDNN Speedup |
-|:--------------------------:|:------------------:|-------------------------:|-------------------------:|-----------------:|---------------------------------:|-------------------------:|--------------:|
-|320                         | 100                | 116                      | **202**                  | 183              | 423                              | **430**                  | **4.3x**      |
-|320                         | 100                | 116                      | **202**                  | 183              | 423                              | **430**                  | **4.3x**      |
-
-```
-code
-```
-
-inline `code`
