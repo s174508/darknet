@@ -18,13 +18,14 @@ Annotation examples for the different classes can be found in these Imgur albums
 
 ## Which files did we change
  - [Makefile.md](Makefile.md)
- - [jobScript.sh](jobScript.sh)
  - [convolutional_layer.c](src/convolutional_layer.c)
      - The file originally declares some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
  - [softmax_layer.c](src/softmax_layer.c)
      - The file originally declares some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
 
 ## Which files are our own ? 
+- [jobScript.sh](jobScript.sh)
+- 
 - configurations files for the three classe in the cfg folder
      1. [yolov3-singleclass.cfg](cfg/yolov3-singleclass.cfg)
      2. [yolov3-multiclass.cfg](cfg/yolov3-multiclass.cfg)
