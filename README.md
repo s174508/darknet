@@ -17,15 +17,15 @@ We've created a [Colab notebook](https://colab.research.google.com/drive/1ULT6Tu
 Annotation examples for the different classes can be found in these Imgur albums: [singleclass](https://imgur.com/a/SrPj2mf), [multiclass](https://imgur.com/a/YZeurLa) and [fullclass](https://imgur.com/a/hpFyVRu).
 
 ## Which files did we change
- - [Makefile](Makefile.md)
- - [job script](jobScript.sh)
- - [file for convolutional layer](src/convolutional_layer.c)
+ - [Makefile.md](Makefile.md)
+ - [jobScript.sh](jobScript.sh)
+ - [convolutional_layer.c](src/convolutional_layer.c)
      - The file originally declares some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
- - [file for softmax layer](src/softmax_layer.c)
+ - [softmax_layer.c](src/softmax_layer.c)
      - The file originally declares some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
 
 ## Which files are our own ? 
-- configurations files for the three classe in the [cfg](cfg) folder
+- configurations files for the three classe in the cfg folder
      1. [yolov3-singleclass.cfg](cfg/yolov3-singleclass.cfg)
      2. [yolov3-multiclass.cfg](cfg/yolov3-multiclass.cfg)
      3. [yolov3-fullclass.cfg](cfg/yolov3-fullclass.cfg)
@@ -41,10 +41,10 @@ Annotation examples for the different classes can be found in these Imgur albums
      1. [train.txt](data/train.txt)
      2. [test.txt](data/test.txt)
      3. [validation.txt](data/validation.txt)
-- all files in the three result directories in the [result](result) folder
-     1. [singleclass](result/singleclass/)
-     2. [multiclass](result/multiclass)
-     3. [fullclass](result/fullclass)
+- all files in the three result directories in the result folder
+     1. singleclass
+     2. multiclass
+     3. fullclass
 Template stuff (remove whenever):
 - bullet point
   - sub bullet
