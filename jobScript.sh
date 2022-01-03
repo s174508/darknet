@@ -3,8 +3,8 @@
 #BSUB -gpu "num=1"
 #BSUB -J YOLOSWAg
 #BSUB -n 1
-#BSUB -R "rusage[mem=10GB]"
-#BSUB -M 10GB
+#BSUB -R "rusage[mem=2GB]" ### Training needs 10GB, annotating needs 2GB
+#BSUB -M 2GB ### Training needs 10GB, annotating needs 2GB
 #BSUB -W 24:00 
 #BSUB -o Output.out 
 #BSUB -e Error.err
