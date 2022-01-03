@@ -25,7 +25,8 @@ Annotation examples for the different classes can be found in these Imgur albums
 
 ## Which files are our own ? 
 - [jobScript.sh](jobScript.sh)
-- 
+- [Transform_Helmet_Dataset.ipynb](Transform_Helmet_Dataset.ipynb) 
+- [YOLOSWAg_results.ipynb](YOLOSWAg_results.ipynb)
 - configurations files for the three classe in the cfg folder
      1. [yolov3-singleclass.cfg](cfg/yolov3-singleclass.cfg)
      2. [yolov3-multiclass.cfg](cfg/yolov3-multiclass.cfg)
