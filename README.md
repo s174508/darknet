@@ -1,6 +1,15 @@
-# YOLO SWAgroup Yolo v3 for motorcycle detection or something.
+# YOLO SWAgroup Yolo v3 for motorcycle detection and model training.
 
-See [Alexey's repository](https://github.com/AlexeyAB/darknet) for in-depth info and guides
+This is our source code for building, training and applying a YOLOv3 model on the DTU HPC cluster. Weights files are too big to upload on GitHub, so here's a link to the [initial weights](https://pjreddie.com/media/files/darknet53.conv.74) we used for training the models. They need to be placed in the main directory of darknet.
+See [Alexey's repository](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects) for in-depth info and guides on how to use the framework.
+
+We've created a [Colab notebook](https://colab.research.google.com/drive/1ULT6TugpDRaLTk-CB3neusN_xTtCpTZk) that can be used to try out our models with some of the resulting weights from our training.
+
+Annotation examples for the different classes can be found in these Imgur albums: [singleclass](https://imgur.com/a/SrPj2mf), [multiclass](https://imgur.com/a/YZeurLa) and [fullclass](https://imgur.com/a/hpFyVRu).
+
+
+
+Template stuff (remove whenever):
 
 - bullet point
   - sub bullet
@@ -17,7 +26,3 @@ code
 ```
 
 inline `code`
-
-Weights files are too big for GitHub. Here's the [initial weights](https://pjreddie.com/media/files/darknet53.conv.74) we used. They need to be placed in the main directory of darknet. (Perhaps we should upload the weights ourselves along with our "final" weights)
-
-Annotation examples for the [singleclass](https://imgur.com/a/SrPj2mf), [multiclass](https://imgur.com/a/YZeurLa) and [fullclass](https://imgur.com/a/hpFyVRu) models. Alternatively, use our [Colab notebook](https://colab.research.google.com/drive/1ULT6TugpDRaLTk-CB3neusN_xTtCpTZk) to try our models
