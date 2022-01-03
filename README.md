@@ -42,7 +42,7 @@ Annotation examples for the different classes can be found in these Imgur albums
      2. [test.txt](data/test.txt)
      3. [validation.txt](data/validation.txt)
 - all files in the three result directories in the [result](result) folder
-     1. [singleclass](result/singleclass)
+     1. [singleclass](result/singleclass/)
      2. [multiclass](result/multiclass)
      3. [fullclass](result/fullclass)
 Template stuff (remove whenever):
