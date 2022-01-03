@@ -5,7 +5,7 @@
 #BSUB -n 1
 #BSUB -R "rusage[mem=2GB]" ### Training needs 10GB, annotating needs 2GB
 #BSUB -M 2GB ### Training needs 10GB, annotating needs 2GB
-#BSUB -W 24:00 
+#BSUB -W 2:00 ### Max on GPU seems to be 24 hours
 #BSUB -o Output.out 
 #BSUB -e Error.err
 
