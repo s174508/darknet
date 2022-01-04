@@ -1,6 +1,6 @@
 # YOLO SWAgroup Yolo v3 for motorcycle detection and model training.
 ## Short 
-This repository is forked from the [original darknet repository]([AlexeyAB's repository](https://github.com/AlexeyAB), and changed to fit our problem, thus parts of this code is our own, which we will state below.
+This repository is forked from the original darknet repository([AlexeyAB's repository](https://github.com/AlexeyAB), and changed to fit our problem, thus parts of this code is our own, which we will state below.
 
 ## Model and Training
 This is our source code for building, training and applying a YOLOv3 model on the DTU HPC cluster. Weights files are too big to upload on GitHub, so here's a link to the [initial weights](https://pjreddie.com/media/files/darknet53.conv.74) we used for training the models. They need to be placed in the main directory of darknet. Additionally, here are some of the weights we got from training (these are all the weights that we have used for the report):
