@@ -15,6 +15,27 @@ This is our source code for building, training and applying a YOLOv3 model on th
 
 See [Alexey's repository](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects) for in-depth info and guides on how to use the framework.
 
+## Steps for training on DTU HPC
+We've described the process in the report, but for clarity here is the process in bullet points.
+
+Building the framework:
+- Clone our repository and unzip it if it's zipped
+- Upload the repository to HPC
+- NOTE: All remaining steps are on HPC
+- Download the initial weights to the main `darknet` folder
+- Open a terminal and use the command `voltash` (the terminal reloads and now uses a GPU)
+- Use the commands `module load cudnn/v8.0.4.30-prod-cuda-11.1` and `module load opencv/3.4.16-python-3.8.11-cuda-11.1` to load the necessary modules
+- Change directory to the main `darknet` folder with `cd {path-to-darknet}`
+- Use the command `make` (A lot of warnings will be generated, but there should be no errors)
+
+Training the model (on HPC):
+- In jobScript.sh, remove the `###` from [line 16](https://github.com/s174508/darknet/blob/master/jobScript.sh#L16) and add `###` in from of [line 22](https://github.com/s174508/darknet/blob/master/jobScript.sh#L22)
+- Revise [lines 6-8](https://github.com/s174508/darknet/blob/master/jobScript.sh#L6-L8)
+- Open a terminal (doesn't need to be a voltash terminal)
+- Change directory to the main `darknet` folder
+- Use the command `bsub < jobScript.sh` to submit the job. Outputs will be printed to the file `e` and `results/output.log`
+- Every 10000th set of weights is automatically saved in the `backup` folder
+
 ## Results 
 The ouput files can be found in the result folder, these are the log files we saved during training.   
 To show how we used these files to create our plots in the report we created a [colab notebook](https://colab.research.google.com/drive/1KukcY0026BplZ4Mo4YG2Bz6EKsHtjZHN?usp=sharing). The corresponding jupyter notebook file can be found [here](YOLOSWAg_results.ipynb) under the name `YOLOSWAg_results.ipynb`.
