@@ -26,7 +26,7 @@ We've created a [Colab notebook](https://colab.research.google.com/drive/1ULT6Tu
 Annotation examples for the different classes can be found in these Imgur albums: [singleclass](https://imgur.com/a/SrPj2mf), [multiclass](https://imgur.com/a/YZeurLa) and [fullclass](https://imgur.com/a/hpFyVRu).
 
 ## Which files did we change
- - [Makefile.md](Makefile.md)
+ - [Makefile](Makefile)
  - [convolutional_layer.c](src/convolutional_layer.c) and [softmax_layer.c](src/softmax_layer.c)
      - The files originally declare some iterator variables inside for-loops, but this syntax doesn't seem to be allowed with the standard used by HPC. Therefore those declarations have been moved out right before the respective for-loops
 
